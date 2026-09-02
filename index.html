@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam Story — 20 Images Download</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; max-width: 1000px; margin: 0 auto; padding: 24px; background: #f7f7f7; color: #222; }
+  h1 { text-align: center; }
+  .zip-btn { display: block; text-align: center; margin: 20px auto; }
+  .zip-btn a { display: inline-block; background: #2563eb; color: #fff; padding: 16px 28px; font-size: 18px; border-radius: 10px; text-decoration: none; font-weight: 600; }
+  .zip-btn a:hover { background: #1d4ed8; }
+  .note { text-align: center; color: #555; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+  .card { background: #fff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; }
+  .card img { width: 100%; display: block; height: auto; aspect-ratio: 16/9; object-fit: cover; cursor: pointer; }
+  .card a.title { display: block; padding: 8px 10px; font-size: 13px; text-align: center; color: #333; text-decoration: none; border-top: 1px solid #eee; background: #fafafa; }
+  .card a.title:hover { background: #eef; }
+</style>
+</head>
+<body>
+  <h1>Sam की कहानी — 20 Images</h1>
+  <p class="note">सभी 20 images नीचे हैं। पूरी ZIP एक साथ डाउनलोड करने के लिए बटन दबाएँ।</p>
+  <div class="zip-btn">
+    <a href="sam_story_20_images.zip" download="sam_story_20_images.zip">📦 पूरी ZIP डाउनलोड करें (27 MB)</a>
+  </div>
+  <p class="note">या नीचे दी गई हर image पर अलग से टैप/क्लिक करके डाउनलोड करें:</p>
+  <div class="grid" id="grid"></div>
+
+  <script>
+    const files = [
+      ["1", "prompt_01_sam_walking_to_school.png", "Sam — School जाते हुए"],
+      ["2", "prompt_02_sam_looking_at_watch.png", "Sam — घड़ी देखकर परेशान"],
+      ["3", "prompt_03_sam_sees_old_man.png", "Sam — बूढ़े आदमी को देखा"],
+      ["4", "prompt_04_old_man_nervous.png", "बूढ़ा आदमी — घबराया हुआ"],
+      ["5", "prompt_05_grocery_bag_falls.png", "सब्ज़ी का बैग गिर गया"],
+      ["6", "prompt_06_helping_collect_groceries.png", "सब्ज़ी उठाते हुए"],
+      ["7", "prompt_07_returning_bag.png", "बैग वापस दिया"],
+      ["8", "prompt_08_offer_help_crossing.png", "पार करने में मदद की पेशकश"],
+      ["9", "prompt_09_worried_about_time.png", "समय की चिंता"],
+      ["10", "prompt_10_crossroads_decision.png", "चौराहे पर फैसला"],
+      ["11", "prompt_11_deciding_to_help.png", "मदद करने का निर्णय"],
+      ["12", "prompt_12_waiting_at_crossing.png", "क्रॉसिंग पर इंतज़ार"],
+      ["13", "prompt_13_signal_green.png", "सिग्नल हरा"],
+      ["14", "prompt_14_crossing_zebra.png", "ज़ेबरा क्रॉसिंग पार"],
+      ["15", "prompt_15_safely_across.png", "सुरक्षित पार"],
+      ["16", "prompt_16_how_does_he_know.png", "नाम कैसे पता?"],
+      ["17", "prompt_17_realizes_late.png", "देर हो गई — सदमा"],
+      ["18", "prompt_18_running_to_school.png", "स्कूल की ओर भागते हुए"],
+      ["19", "prompt_19_arriving_late_classroom.png", "क्लास में देर से"],
+      ["20", "prompt_20_explaining_to_teacher.png", "टीचर को समझाया"]
+    ];
+    const grid = document.getElementById('grid');
+    files.forEach(([n, file, label]) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `<a href="images/${file}" download="${file}"><img src="images/${file}" alt="${label}" loading="lazy"></a>
+        <a class="title" href="images/${file}" download="${file}">${n}. ${label}</a>`;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
