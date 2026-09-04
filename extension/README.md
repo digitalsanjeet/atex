@@ -8,12 +8,23 @@ Bulk me prompts daalo → har prompt se image generate hogi → serial number ke
 3. **Load unpacked** → is `extension/` folder ko select karo
 4. Toolbar me extension icon pin kar lo
 
+## Master Prompt
+Top wale **Master prompt** box me ek common style/quality text daalo — wo har line par apply hoga.
+
+- **`{prompt}` ke saath:** `photo of {prompt}, 35mm, cinematic` → line `a cat` → `photo of a cat, 35mm, cinematic`
+- **`{prompt}` ke bina:** Position dropdown se decide karo
+  - *Suffix*: `a cat, 8k, cinematic lighting`
+  - *Prefix*: `8k, cinematic lighting, a cat`
+- **Enable** checkbox se master prompt temporarily band kar sakte ho
+- Niche live **Preview** dikhata hai ki pehla final prompt kaisa banega
+
 ## Use
-1. Textarea me har line par ek prompt likho
-2. **File prefix**, **Start no.**, **Digits** set karo
+1. (Optional) Master prompt set karo
+2. Textarea me har line par ek prompt likho
+3. **File prefix**, **Start no.**, **Digits** set karo
    - prefix `image`, start `1`, digits `3` → `image-001.png`, `image-002.png`, ...
-3. **Download folder** (Downloads ke andar subfolder), **Delay** (rate-limit se bachne ke liye)
-4. **Start** dabao — progress bar aur log niche dikhega. **Stop** se beech me rok sakte ho.
+4. **Download folder** (Downloads ke andar subfolder), **Delay** (rate-limit se bachne ke liye)
+5. **Start** dabao — progress bar aur log niche dikhega. **Stop** se beech me rok sakte ho.
 
 ## Providers (Advanced section)
 - **Pollinations** — free, koi API key nahi. Default.

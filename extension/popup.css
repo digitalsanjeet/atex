@@ -41,3 +41,19 @@ button:disabled { opacity: .5; cursor: not-allowed; }
 .log li { padding: 3px 0; border-bottom: 1px solid #1c2029; }
 .log li.ok { color: #6ee7a8; }
 .log li.err { color: #ff8a8a; }
+
+.master-opts { align-items: end; }
+.checkbox-field { flex: 0 0 90px; }
+label.inline {
+  display: flex; align-items: center; gap: 6px;
+  margin: 0 0 9px; font-size: 12px; color: #cbd2e2; cursor: pointer;
+}
+label.inline input { width: auto; }
+code { background: #1c2029; padding: 1px 4px; border-radius: 4px; font-size: 10px; }
+.preview {
+  margin-top: 8px; padding: 7px 9px; border-radius: 8px;
+  background: #12151c; border: 1px dashed #2a3040;
+  font-size: 11px; color: #8b93a7; word-break: break-word;
+}
+.preview b { color: #9fb4ff; font-weight: 600; }
+.preview:empty { display: none; }

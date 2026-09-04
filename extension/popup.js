@@ -1,13 +1,29 @@
 const $ = (id) => document.getElementById(id);
-const fields = ['prompts', 'prefix', 'start', 'pad', 'folder', 'delay', 'provider', 'width', 'height', 'ext', 'apiKey', 'model', 'template'];
+const fields = ['master', 'masterMode', 'prompts', 'prefix', 'start', 'pad', 'folder', 'delay', 'provider', 'width', 'height', 'ext', 'apiKey', 'model', 'template'];
+
+// Master prompt ko ek single prompt ke saath merge karta hai.
+function applyMaster(master, mode, enabled, prompt) {
+  const m = (master || '').trim();
+  if (!enabled || !m) return prompt;
+  if (m.includes('{prompt}')) return m.replaceAll('{prompt}', prompt).trim();
+  const join = (a, b) => [a, b].filter(Boolean).join(', ').replace(/\s*,\s*,\s*/g, ', ').trim();
+  return mode === 'prefix' ? join(m, prompt) : join(prompt, m);
+}
 
 function readConfig() {
+  const master = $('master').value;
+  const mode = $('masterMode').value;
+  const on = $('masterOn').checked;
   const prompts = $('prompts').value
     .split('\n')
     .map((s) => s.trim())
-    .filter(Boolean);
+    .filter(Boolean)
+    .map((p) => applyMaster(master, mode, on, p));
   return {
     prompts,
+    master: master.trim(),
+    masterMode: mode,
+    masterOn: on,
     prefix: $('prefix').value.trim(),
     start: parseInt($('start').value, 10) || 0,
     pad: parseInt($('pad').value, 10) || 3,
@@ -27,6 +43,7 @@ function readConfig() {
 function save() {
   const data = {};
   fields.forEach((f) => (data[f] = $(f).value));
+  data.masterOn = $('masterOn').checked;
   chrome.storage.local.set({ settings: data });
 }
 
@@ -36,7 +53,25 @@ function restore() {
     fields.forEach((f) => {
       if (settings[f] !== undefined) $(f).value = settings[f];
     });
+    if (typeof settings.masterOn === 'boolean') $('masterOn').checked = settings.masterOn;
+    updatePreview();
   });
+}
+
+// Pehle prompt ka final (master-merged) roop dikhata hai.
+function updatePreview() {
+  const first = $('prompts').value.split('\n').map((s) => s.trim()).find(Boolean);
+  const box = $('preview');
+  if (!first) {
+    box.textContent = '';
+    return;
+  }
+  const merged = applyMaster($('master').value, $('masterMode').value, $('masterOn').checked, first);
+  const count = $('prompts').value.split('\n').filter((s) => s.trim()).length;
+  box.innerHTML = '';
+  const b = document.createElement('b');
+  b.textContent = `Preview (1/${count}): `;
+  box.append(b, document.createTextNode(merged));
 }
 
 function addLog(level, text) {
@@ -93,6 +128,11 @@ chrome.runtime.onMessage.addListener((msg) => {
 });
 
 fields.forEach((f) => $(f).addEventListener('change', save));
+$('masterOn').addEventListener('change', () => { save(); updatePreview(); });
+['master', 'prompts', 'masterMode'].forEach((f) =>
+  $(f).addEventListener('input', updatePreview)
+);
+$('masterMode').addEventListener('change', updatePreview);
 
 restore();
 chrome.runtime.sendMessage({ type: 'STATUS' }, (res) => {

@@ -11,8 +11,26 @@
     <p class="sub">Har line = ek prompt. Images serial number ke saath download hongi.</p>
   </header>
 
+  <label for="master">Master prompt (sab prompts par apply hoga)</label>
+  <textarea id="master" rows="3" placeholder="ultra realistic, 8k, cinematic lighting, {prompt}, shot on 35mm"></textarea>
+  <div class="row master-opts">
+    <div class="field">
+      <label for="masterMode">Position (agar {prompt} na ho)</label>
+      <select id="masterMode">
+        <option value="suffix">Prompt ke baad (suffix)</option>
+        <option value="prefix">Prompt se pehle (prefix)</option>
+      </select>
+    </div>
+    <div class="field checkbox-field">
+      <label class="inline"><input id="masterOn" type="checkbox" checked /> Enable</label>
+    </div>
+  </div>
+  <p class="hint">Tip: master prompt me <code>{prompt}</code> likho to har line wahin insert hogi. Warna prefix/suffix ki tarah joda jayega.</p>
+
   <label for="prompts">Prompts (one per line)</label>
   <textarea id="prompts" rows="8" placeholder="a cat astronaut in space&#10;sunset over mountains, cinematic&#10;cyberpunk street, neon rain"></textarea>
+
+  <div id="preview" class="preview"></div>
 
   <div class="row">
     <div class="field">
