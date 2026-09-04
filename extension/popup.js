@@ -1,5 +1,5 @@
 const $ = (id) => document.getElementById(id);
-const fields = ['master', 'masterMode', 'prompts', 'prefix', 'start', 'pad', 'folder', 'delay', 'provider', 'width', 'height', 'ext', 'apiKey', 'model', 'template'];
+const fields = ['master', 'masterMode', 'prompts', 'prefix', 'start', 'pad', 'folder', 'delay', 'provider', 'width', 'height', 'ext', 'apiKey', 'model', 'template', 'flowPerPrompt', 'flowTimeout', 'promptSelector', 'generateSelector'];
 
 // Master prompt ko ek single prompt ke saath merge karta hai.
 function applyMaster(master, mode, enabled, prompt) {
@@ -36,6 +36,10 @@ function readConfig() {
     apiKey: $('apiKey').value.trim(),
     model: $('model').value.trim(),
     template: $('template').value.trim(),
+    flowPerPrompt: parseInt($('flowPerPrompt').value, 10) || 1,
+    flowTimeout: parseInt($('flowTimeout').value, 10) || 180,
+    promptSelector: $('promptSelector').value.trim(),
+    generateSelector: $('generateSelector').value.trim(),
     useSlug: false,
   };
 }
@@ -55,6 +59,7 @@ function restore() {
     });
     if (typeof settings.masterOn === 'boolean') $('masterOn').checked = settings.masterOn;
     updatePreview();
+    syncProvider();
   });
 }
 
@@ -91,6 +96,9 @@ $('start-btn').addEventListener('click', () => {
   if (!config.prompts.length) {
     $('status').textContent = 'Kam se kam ek prompt daalo.';
     return;
+  }
+  if (config.provider === 'flow' && config.delay < 1500) {
+    config.delay = 1500; // Flow ko settle hone ka time
   }
   if (config.provider === 'openai' && !config.apiKey) {
     $('status').textContent = 'OpenAI ke liye API key chahiye.';
@@ -134,7 +142,16 @@ $('masterOn').addEventListener('change', () => { save(); updatePreview(); });
 );
 $('masterMode').addEventListener('change', updatePreview);
 
+// Provider ke hisab se Flow settings dikhao/chhupao
+function syncProvider() {
+  const isFlow = $('provider').value === 'flow';
+  $('flow-box').classList.toggle('hidden', !isFlow);
+  if (isFlow) $('details-open').open = true;
+}
+$('provider').addEventListener('change', syncProvider);
+
 restore();
+syncProvider();
 chrome.runtime.sendMessage({ type: 'STATUS' }, (res) => {
   if (res && res.ok) {
     setRunning(res.state.running);

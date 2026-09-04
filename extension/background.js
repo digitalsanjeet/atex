@@ -93,6 +93,48 @@ async function openaiImage(config, prompt) {
   return item.url;
 }
 
+/* -------- Google Flow tab automation -------- */
+
+async function findFlowTab() {
+  const tabs = await chrome.tabs.query({ url: ['https://labs.google/*'] });
+  const flow = tabs.find((t) => /\/flow/.test(t.url)) || tabs[0];
+  if (!flow) {
+    throw new Error('labs.google/fx/tools/flow tab khula nahi hai. Pehle Flow project kholo.');
+  }
+  return flow;
+}
+
+async function ensureContentScript(tabId) {
+  try {
+    const res = await chrome.tabs.sendMessage(tabId, { type: 'FLOW_PING' });
+    if (res && res.ok) return res;
+  } catch (_) {
+    // not injected yet
+  }
+  await chrome.scripting.executeScript({ target: { tabId }, files: ['flow-content.js'] });
+  await sleep(600);
+  return await chrome.tabs.sendMessage(tabId, { type: 'FLOW_PING' });
+}
+
+async function flowGenerate(config, prompt) {
+  const tab = await findFlowTab();
+  const ping = await ensureContentScript(tab.id);
+  if (!ping || !ping.ready) {
+    throw new Error('Flow page par prompt box nahi mila — project page khol kar rakho.');
+  }
+  const res = await chrome.tabs.sendMessage(tab.id, {
+    type: 'FLOW_RUN',
+    prompt,
+    perPrompt: config.flowPerPrompt || 1,
+    timeout: (config.flowTimeout || 180) * 1000,
+    promptSelector: config.promptSelector || '',
+    generateSelector: config.generateSelector || '',
+    typeDelay: 400,
+  });
+  if (!res || !res.ok) throw new Error((res && res.error) || 'Flow generation failed');
+  return res.images; // dataURL array
+}
+
 async function toDataUrl(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Fetch ${res.status}`);
@@ -129,28 +171,39 @@ async function runJob(config) {
     }
     const prompt = config.prompts[i];
     const serial = config.start + i;
-    const name = `${pad(serial, config.pad)}${config.useSlug ? '-' + safeSlug(prompt) : ''}`;
     const folder = config.folder ? config.folder.replace(/^\/+|\/+$/g, '') + '/' : '';
-    const filename = `${folder}${config.prefix ? config.prefix + '-' : ''}${name}.${config.ext || 'png'}`;
+    const base = `${folder}${config.prefix ? config.prefix + '-' : ''}${pad(serial, config.pad)}`;
+    const ext = config.ext || 'png';
 
     emit({ status: `(${i + 1}/${state.total}) ${prompt.slice(0, 50)}` });
 
+    const maxAttempts = config.provider === 'flow' ? 2 : 3;
     let attempt = 0;
     let ok = false;
-    while (attempt < 3 && !ok && !state.stop) {
+    while (attempt < maxAttempts && !ok && !state.stop) {
       attempt++;
       try {
-        const src =
-          config.provider === 'openai'
-            ? await openaiImage(config, prompt)
-            : buildUrl(config, prompt, serial);
-        const dataUrl = src.startsWith('data:') ? src : await toDataUrl(src);
-        await download(dataUrl, filename);
-        log('ok', `${filename}`);
+        let dataUrls;
+        if (config.provider === 'flow') {
+          dataUrls = await flowGenerate(config, prompt);
+        } else if (config.provider === 'openai') {
+          const src = await openaiImage(config, prompt);
+          dataUrls = [src.startsWith('data:') ? src : await toDataUrl(src)];
+        } else {
+          dataUrls = [await toDataUrl(buildUrl(config, prompt, serial))];
+        }
+
+        for (let k = 0; k < dataUrls.length; k++) {
+          // ek se zyada image ho to -a, -b, -c suffix
+          const suffix = dataUrls.length > 1 ? `-${String.fromCharCode(97 + k)}` : '';
+          const filename = `${base}${suffix}.${ext}`;
+          await download(dataUrls[k], filename);
+          log('ok', filename);
+        }
         ok = true;
       } catch (e) {
-        if (attempt >= 3) log('err', `#${serial} failed: ${e.message}`);
-        else await sleep(1000 * attempt);
+        if (attempt >= maxAttempts) log('err', `#${serial} failed: ${e.message}`);
+        else await sleep(1500 * attempt);
       }
     }
 

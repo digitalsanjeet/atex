@@ -58,14 +58,33 @@
     </div>
   </div>
 
-  <details>
+  <details id="details-open">
     <summary>Advanced / API settings</summary>
     <label for="provider">Provider</label>
     <select id="provider">
+      <option value="flow">Google Flow (labs.google tab automation)</option>
       <option value="pollinations">Pollinations (free, no API key)</option>
       <option value="openai">OpenAI Images (API key needed)</option>
       <option value="custom">Custom URL template</option>
     </select>
+
+    <div id="flow-box" class="subbox">
+      <p class="hint">Google Flow tab kholo (<code>labs.google/fx/tools/flow</code>), project ke andar jao, phir Start dabao. Extension wahin prompt type karke Generate click karega.</p>
+      <div class="row">
+        <div class="field">
+          <label for="flowPerPrompt">Images / prompt</label>
+          <input id="flowPerPrompt" type="number" value="1" min="1" max="8" />
+        </div>
+        <div class="field">
+          <label for="flowTimeout">Timeout (sec)</label>
+          <input id="flowTimeout" type="number" value="180" min="20" />
+        </div>
+      </div>
+      <label for="promptSelector">Prompt box selector (optional)</label>
+      <input id="promptSelector" type="text" placeholder="auto-detect" />
+      <label for="generateSelector">Generate button selector (optional)</label>
+      <input id="generateSelector" type="text" placeholder="auto-detect" />
+    </div>
 
     <div class="row">
       <div class="field">

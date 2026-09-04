@@ -1,11 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Bulk Image Prompt Downloader",
-  "version": "1.0.0",
-  "description": "Bulk prompts daalo, images generate karo aur serial number ke saath auto-download karo.",
-  "permissions": ["downloads", "storage"],
+  "version": "1.2.0",
+  "description": "Bulk prompts daalo, Google Flow ya API se images generate karo aur serial number ke saath download karo.",
+  "permissions": ["downloads", "storage", "scripting", "tabs"],
   "host_permissions": ["<all_urls>"],
   "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["https://labs.google/*"],
+      "js": ["flow-content.js"],
+      "run_at": "document_idle"
+    }
+  ],
   "action": {
     "default_title": "Bulk Image Prompt Downloader",
     "default_popup": "popup.html",

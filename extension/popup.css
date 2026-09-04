@@ -57,3 +57,10 @@ code { background: #1c2029; padding: 1px 4px; border-radius: 4px; font-size: 10p
 }
 .preview b { color: #9fb4ff; font-weight: 600; }
 .preview:empty { display: none; }
+
+.subbox {
+  margin-top: 8px; padding: 8px; border-radius: 8px;
+  background: #12151c; border: 1px solid #232838;
+}
+.subbox .hint { margin-bottom: 4px; }
+.hidden { display: none !important; }
