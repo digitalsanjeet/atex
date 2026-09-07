@@ -47,8 +47,16 @@ Raw file for tooling: [`prompts/master_prompt.txt`](prompts/master_prompt.txt)
 4. **No reordering, no paraphrasing, no "synonym swaps".** Consistency beats cleverness.
 5. Anything you must change → treat it as a **new version**: bump the version below, update the change log, keep the old version in the log.
 
+## Linked Project Files
+
+| File | Purpose |
+|------|---------|
+| [`storyboard.md`](storyboard.md) | Full 144-image storyboard — "Rent vs Buy: The 8.71% Rule" (12 sections, 12:00 runtime) |
+| [`storyboard.json`](storyboard.json) | Machine-readable version of the storyboard for batch generation tooling |
+| [`prompts/master_prompt.txt`](prompts/master_prompt.txt) | Raw locked spine (v1.0), copy-paste ready |
+
 ## Change Log
 
 | Date | Version | Change |
 |------|---------|--------|
-| 2026-09-07 | v1.0 | Prompt locked (initial) |
+| 2026-09-07 | v1.0 | Prompt locked (initial) · 144-image storyboard v1.0 linked |

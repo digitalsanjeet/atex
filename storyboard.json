@@ -1,0 +1,694 @@
+{
+  "project": "atex — Rent vs Buy: The 8.71% Rule",
+  "storyboard_version": "v1.0",
+  "master_prompt": "Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6",
+  "master_prompt_file": "prompts/master_prompt.txt",
+  "total_images": 144,
+  "runtime": "12:00",
+  "sections": [
+    {
+      "number": 1,
+      "title": "Intro / Hook",
+      "start": "0:00",
+      "end": "0:45",
+      "image_count": 9,
+      "images": [
+        {
+          "id": 1,
+          "prompt": "American man in his 30s standing at a crossroads, one path leads to a house, other to an apartment building, thoughtful expression, morning light, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 2,
+          "prompt": "American man holding two envelopes labeled \"RENT\" and \"MORTGAGE\", confused look, kitchen background, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 3,
+          "prompt": "American man watching money coins disappear into a drain, worried expression, simple room background, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 4,
+          "prompt": "Close-up of American man's face with question marks floating around his head, thinking hard, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 5,
+          "prompt": "American man pointing at a large chalkboard with \"RENT vs BUY\" written on it, classroom setting, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 6,
+          "prompt": "American man sitting at a desk with papers and calculator, serious focused expression, home office, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 7,
+          "prompt": "American man with a magnifying glass examining a small house model on a table, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 8,
+          "prompt": "American man standing outside a house with \"FOR SALE\" sign, arms crossed, evaluating, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 9,
+          "prompt": "American man holding a glowing lightbulb above his head, eureka moment expression, simple background, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Renting Cost",
+      "start": "0:45",
+      "end": "1:30",
+      "image_count": 9,
+      "images": [
+        {
+          "id": 10,
+          "prompt": "American man handing over a rent check to a landlord, money flying away, sad expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 11,
+          "prompt": "Calendar showing 12 months with dollar coins disappearing each month, American man watching, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 12,
+          "prompt": "American man with empty pockets turned out, rent receipt in hand, apartment background, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 13,
+          "prompt": "Stack of dollar bills labeled \"$24,000/year\" melting away like ice, American man watching helplessly, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 14,
+          "prompt": "American man giving keys back to landlord at end of lease, walking away with bags, no asset gained, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 15,
+          "prompt": "American man looking at a rent receipt vs a zero balance savings account, frustrated expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 16,
+          "prompt": "Landlord smiling counting money while American man renter watches from outside window, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 17,
+          "prompt": "American man calculating on notepad, writing \"2000 x 12 = 24000\" with worried look, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 18,
+          "prompt": "Simple infographic panel showing dollars flowing from tenant to landlord with no return arrow, American man beside it, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Misconception Bust",
+      "start": "1:30",
+      "end": "2:30",
+      "image_count": 12,
+      "images": [
+        {
+          "id": 19,
+          "prompt": "American man confidently pointing at a house saying \"I am building equity!\" speech bubble, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 20,
+          "prompt": "Iceberg illustration small tip labeled \"visible costs\" huge underwater mass labeled \"hidden costs\" American man on boat above, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 21,
+          "prompt": "American man pulling back a curtain to reveal hidden bills and costs behind a house, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 22,
+          "prompt": "Red X stamp over \"mortgage equals no cost\" text, American man shaking finger disapprovingly, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 23,
+          "prompt": "American man opening a house-shaped gift box surprised to find bills and tax notices inside, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 24,
+          "prompt": "Three cost boxes labeled \"Property Tax\" \"Maintenance\" \"Capital Cost\" stacked in front of American man, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 25,
+          "prompt": "American man with a scale one side has \"RENT\" other side has \"TRUE COST OF OWNING\" both weighing heavy, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 26,
+          "prompt": "American man looking under the hood of a car-shaped house discovering hidden engine costs, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 27,
+          "prompt": "Myth bubble floating above house popping with a pin held by American man \"equity equals free\" written inside, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 28,
+          "prompt": "American man standing before a chalkboard with 3 columns Tax Maintenance Capital adding them up, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 29,
+          "prompt": "American man with flashlight illuminating dark corners of a house revealing dusty cost tags, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 30,
+          "prompt": "American man doing apples-to-apples comparison on paper two columns RENT vs OWN side by side, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Property Tax",
+      "start": "2:30",
+      "end": "4:00",
+      "image_count": 18,
+      "images": [
+        {
+          "id": 31,
+          "prompt": "American man receiving a large government tax envelope surprised expression front door setting, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 32,
+          "prompt": "Government building illustration with dollar signs floating toward it from small suburban houses below, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 33,
+          "prompt": "American man reading tax notice labeled \"1.11% of property value\" shocked face, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 34,
+          "prompt": "Visual of a house with a percentage tag \"1.11%\" hanging on its door like a price label, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 35,
+          "prompt": "American man at calculator writing \"500,000 x 1.11% = $5,500\" on notepad kitchen table setting, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 36,
+          "prompt": "Dollar coins labeled \"$5,500 per year\" flying away from American man toward government tax box, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 37,
+          "prompt": "American man standing next to house tax meter ticking upward helpless shrug expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 38,
+          "prompt": "Renter sitting happily no tax notice vs homeowner American man buried in tax papers, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 39,
+          "prompt": "American man dropping dollar coins into a government bucket labeled \"property tax\" annual routine, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 40,
+          "prompt": "Simple bar showing \"$5,500 per year never returns\" with sad American man beside it, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 41,
+          "prompt": "American man mailing a tax payment envelope post box neighborhood street background, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 42,
+          "prompt": "Map of USA with property tax percentage labels floating over states American man pointing at average rate, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 43,
+          "prompt": "American man with recurring calendar marked \"TAX DUE\" every year sighing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 44,
+          "prompt": "House illustration with small tax meter embedded in wall like a utility meter ticking, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 45,
+          "prompt": "American man explaining to his wife at dining table tax notice on table both concerned, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 46,
+          "prompt": "Piggy bank with \"PROPERTY TAX\" label being cracked open dollars emptying out, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 47,
+          "prompt": "American man highlighting \"Cost 1: Property Tax 1.11%\" on a whiteboard marker in hand, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 48,
+          "prompt": "Running total scoreboard showing \"Property Tax $5,500 added\" with American man watching, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Maintenance",
+      "start": "4:00",
+      "end": "5:15",
+      "image_count": 15,
+      "images": [
+        {
+          "id": 49,
+          "prompt": "American man on ladder fixing leaking roof in rain frustrated expression suburban home, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 50,
+          "prompt": "Broken HVAC unit in summer heat American man sweating repairman giving big bill, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 51,
+          "prompt": "American man with toolbox facing long list of home repairs on clipboard overwhelmed, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 52,
+          "prompt": "Plumber at American man's house burst pipe water everywhere large invoice handed over, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 53,
+          "prompt": "American man setting aside a jar labeled \"Maintenance Fund 1%\" from monthly budget, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 54,
+          "prompt": "House with bandages and patches on it like an injured patient American man as doctor, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 55,
+          "prompt": "American man writing \"$5,000 per year maintenance\" on notepad tapping pen thoughtfully, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 56,
+          "prompt": "Old vs new house comparison old house with many repair tags American man comparing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 57,
+          "prompt": "Renter relaxing on couch calling landlord about broken tap homeowner American man fixing it himself, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 58,
+          "prompt": "American man with emergency repair bills spread on table roof plumbing electrical paint, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 59,
+          "prompt": "1% maintenance visual house worth $500,000 with $5,000 maintenance label floating beside it, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 60,
+          "prompt": "American man on phone calling contractor piggy bank beside him getting lighter, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 61,
+          "prompt": "Running total scoreboard \"Tax $5,500 plus Maintenance $5,000 equals $10,500 lost per year\", Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 62,
+          "prompt": "American man highlighting \"Cost 2: Maintenance 1%\" on whiteboard marker in hand, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 63,
+          "prompt": "House age timeline showing increasing maintenance costs over decades American man pointing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Opportunity Cost",
+      "start": "5:15",
+      "end": "7:00",
+      "image_count": 21,
+      "images": [
+        {
+          "id": 64,
+          "prompt": "American man choosing between stock market chart and house fork-in-road moment, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 65,
+          "prompt": "$100,000 dollar bills locked inside a house-shaped piggy bank American man watching, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 66,
+          "prompt": "Stock market graph rising at 7% upward American man watching it from outside unable to participate, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 67,
+          "prompt": "Two parallel graphs real estate flat 2% stocks rising 7% American man comparing both, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 68,
+          "prompt": "American man imagining alternate reality where he invested down payment happy version of himself, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 69,
+          "prompt": "5% gap illustrated as a bridge American man cannot cross because money is locked in house, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 70,
+          "prompt": "American man watching a money plant growing from invested amount vs wilting from locked equity, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 71,
+          "prompt": "Opportunity cost meter showing \"$5,000 per year lost\" with American man pointing at it, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 72,
+          "prompt": "American man with two buckets one filling slowly real estate 2% one overflowing stocks 7%, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 73,
+          "prompt": "Down payment of $100,000 shown as locked vault inside house American man outside unable to access, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 74,
+          "prompt": "American man calculating on paper \"$100,000 x 5% equals $5,000 per year opportunity cost\", Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 75,
+          "prompt": "Time value of money small seed down payment that could grow into tree market returns, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 76,
+          "prompt": "American man reading stock market news happily vs looking sadly at locked home equity, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 77,
+          "prompt": "Ghost of missed returns haunting American man who bought house instead of investing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 78,
+          "prompt": "Split screen renter American man investing freely vs buyer American man locked in mortgage, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 79,
+          "prompt": "American man at crossroads again path A stocks going up path B house staying flat, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 80,
+          "prompt": "30-year compound growth visual of $100,000 in stocks vs same amount in real estate, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 81,
+          "prompt": "American man explaining opportunity cost concept to friend over coffee informal setting, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 82,
+          "prompt": "Invisible cost tag labeled \"$5,000 per year\" hanging on house that only American man can see, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 83,
+          "prompt": "American man adding first part of equation on board \"Opportunity Cost equals $5,000 per year\", Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 84,
+          "prompt": "Running scoreboard updating \"$5,500 plus $5,000 plus $5,000 opp cost equals $15,500\" American man watching, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Mortgage Interest",
+      "start": "7:00",
+      "end": "8:00",
+      "image_count": 12,
+      "images": [
+        {
+          "id": 85,
+          "prompt": "Bank building with large \"INTEREST\" sign American man walking in nervously, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 86,
+          "prompt": "American man signing mortgage papers banker smiling large interest number visible on document, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 87,
+          "prompt": "$28,000 dollars flying toward bank each year American man watching helplessly, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 88,
+          "prompt": "Interest meter on wall ticking like electricity meter American man looking at it worried, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 89,
+          "prompt": "Loan amount $400,000 with 7% interest rate calculation shown on American man's notepad, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 90,
+          "prompt": "American man reading mortgage statement large \"Interest Paid\" column vs tiny \"Principal\" column, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 91,
+          "prompt": "Amortization chart visual early years mostly interest later years more principal American man studying it, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 92,
+          "prompt": "American man holding two bags one labeled \"Interest\" heavy going to bank one \"Equity\" light, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 93,
+          "prompt": "Cost of debt formula on board \"Loan x Interest Rate equals Annual Interest Cost\" American man pointing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 94,
+          "prompt": "30-year timeline showing interest payments slowly decreasing American man tracking progress, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 95,
+          "prompt": "American man adding \"$5,000 plus $28,000 interest equals $33,000 capital cost per year\", Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 96,
+          "prompt": "Running scoreboard final all three costs added total $43,500 per year American man wide-eyed, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "title": "8.71% Rule Reveal",
+      "start": "8:00",
+      "end": "9:15",
+      "image_count": 15,
+      "images": [
+        {
+          "id": 97,
+          "prompt": "American man dramatically unveiling a large board showing \"8.71%\" in bold spotlight effect, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 98,
+          "prompt": "Formula animation 1.11 plus 1 plus 6.6 equals 8.71% written step by step American man smiling, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 99,
+          "prompt": "American man with calculator punching in home price result showing monthly ownership cost, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 100,
+          "prompt": "Simple rule card \"Home Price x 8.71% divided by 12 equals Monthly Cost\" American man holding it up, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 101,
+          "prompt": "American man applying rule to $400,000 home \"$400,000 x 8.71% divided by 12 equals $2,903 per month\", Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 102,
+          "prompt": "Rent vs ownership cost scale tipping American man watching which side wins, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 103,
+          "prompt": "American man comparing rent $1,500 vs ownership cost $2,903 choosing renting, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 104,
+          "prompt": "Thumbs up for renting thumbs down for buying American man making the call confident expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 105,
+          "prompt": "American man sharing the 8.71% rule formula card with friend over coffee confident expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 106,
+          "prompt": "Google Sheets calculator open on laptop American man entering numbers formula auto-calculating, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 107,
+          "prompt": "American man in different US cities applying same formula different home prices same rule, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 108,
+          "prompt": "Break-even point shown on chart American man marking where renting stops making sense, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 109,
+          "prompt": "American man confidently holding the 8.71% rule card checkmark behind him, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 110,
+          "prompt": "Rule applied to three different home prices $250,000 $400,000 $600,000 three results shown American man comparing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 111,
+          "prompt": "American man with arms open wide triumphant \"Now you know the rule!\" expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "title": "Flaws",
+      "start": "9:15",
+      "end": "10:15",
+      "image_count": 12,
+      "images": [
+        {
+          "id": 112,
+          "prompt": "American man impulsively buying expensive latte despite knowing opportunity cost laughing at himself, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 113,
+          "prompt": "Renter American man with $100,000 savings gambling at casino instead of investing bad decision, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 114,
+          "prompt": "American man acknowledging human irrationality angel on one shoulder invest devil on other spend, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 115,
+          "prompt": "Mortgage as forced savings jar each monthly payment adding coins to equity jar automatically, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 116,
+          "prompt": "Amortization curve visual early years interest heavy later years equity heavy 30 year journey, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 117,
+          "prompt": "American man looking at inflation chart rising fixed mortgage payment staying flat smile, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 118,
+          "prompt": "Variable conditions interest rate chart swinging wildly American man trying to keep balance, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 119,
+          "prompt": "American man adjusting calculator variables different US state flags in background, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 120,
+          "prompt": "Tax deduction benefit American man crossing off mortgage interest from tax bill savings appearing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 121,
+          "prompt": "American man with warning flag \"Rule has limits always run your own numbers\" message, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 122,
+          "prompt": "Pros and cons list on board for buying American man adding and subtracting items thoughtfully, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 123,
+          "prompt": "American man acknowledging the rule is simple but life is complex humble expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "title": "Pros of Buying",
+      "start": "10:15",
+      "end": "11:00",
+      "image_count": 9,
+      "images": [
+        {
+          "id": 124,
+          "prompt": "American man with family standing proudly in front of their own suburban home warm evening light, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 125,
+          "prompt": "Fixed mortgage payment staying same while rent arrow rises around it American man smiling, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 126,
+          "prompt": "American man renovating his home freely painting walls no landlord permission needed, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 127,
+          "prompt": "Home value appreciation graph rising steeply over 30 years American man watching with satisfaction, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 128,
+          "prompt": "American man in retirement sitting peacefully in fully paid off home no more mortgage free, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 129,
+          "prompt": "Inflation helping homeowner old $300 mortgage feeling like nothing in today's money American man laughing, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 130,
+          "prompt": "Home sold for 3x price after 30 years American man celebrating capital appreciation moment, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 131,
+          "prompt": "American man with security shield over his house no eviction notice permanent stability, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 132,
+          "prompt": "Emotional fulfillment American man sitting at window of own home peaceful content expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "title": "Pros of Renting",
+      "start": "11:00",
+      "end": "11:30",
+      "image_count": 6,
+      "images": [
+        {
+          "id": 133,
+          "prompt": "American man with backpack and luggage free to move cities anytime happy expression, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 134,
+          "prompt": "Renter American man calling landlord for repair relaxing on couch while repair happens no stress, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 135,
+          "prompt": "Renter simple budget just rent plus insurance vs homeowner complex budget with many costs, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 136,
+          "prompt": "American man renter enjoying apartment amenities gym pool rooftop terrace all included in rent, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 137,
+          "prompt": "Renter American man investing freed-up capital in stocks while homeowner locked in equity, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 138,
+          "prompt": "American man moving to new city for dream job easily no house to sell no delay, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "title": "Final Verdict + CTA",
+      "start": "11:30",
+      "end": "12:00",
+      "image_count": 6,
+      "images": [
+        {
+          "id": 139,
+          "prompt": "American man with final verdict board \"Short term Rent wins Long term 5 plus years Buy wins\", Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 140,
+          "prompt": "American man with calculator \"Run your own numbers\" message in speech bubble confident pose, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 141,
+          "prompt": "American man pointing at 5-year timeline before 5 years rent after 5 years consider buying, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 142,
+          "prompt": "American man giving thumbs up to camera friendly and approachable end of video energy, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 143,
+          "prompt": "American man pointing downward at \"8.71% Rule Calculator\" link helpful gesture warm smile, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        },
+        {
+          "id": 144,
+          "prompt": "American man waving goodbye house and stock chart both visible behind him balanced ending, Clean 2D comic art style, detailed line art, flat cell shading, muted everyday color palette, warm ambient lighting, webcomic graphic novel aesthetic, semi-realistic character design, American man in his 30s, simple casual clothes, earthy brown and beige tones --ar 16:9 --niji 6"
+        }
+      ]
+    }
+  ]
+}
