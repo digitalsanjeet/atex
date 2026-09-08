@@ -14,3 +14,4 @@ Append this exact suffix to every image-generation prompt:
 - Keep the wording, punctuation, order, aspect ratio, and version flag unchanged.
 - Add scene-specific instructions before the suffix.
 - Do not remove or override the suffix unless the master prompt is explicitly updated.
+- The normalized 128-image prompt pack is maintained in [`IMAGE_PROMPTS.md`](IMAGE_PROMPTS.md).
