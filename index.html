@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Images 1–85 (PNG) Gallery</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f172a; color: #e2e8f0; }
+  header { text-align: center; padding: 32px 16px 16px; background: linear-gradient(135deg,#4c1d95,#1e3a8a); }
+  header h1 { font-size: 28px; margin-bottom: 8px; }
+  header p { opacity: .85; }
+  .actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; padding:20px 16px 4px; }
+  .btn { display:inline-block; padding:12px 26px; border-radius:10px; font-weight:700; text-decoration:none; font-size:16px; }
+  .btn-green { background:#22c55e; color:#052e16; }
+  .btn-blue { background:#38bdf8; color:#082f49; }
+  .btn:hover { filter:brightness(1.1); }
+  .count { text-align:center; padding:10px; color:#94a3b8; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px; padding:16px; max-width:1400px; margin:0 auto 40px; }
+  .card { background:#1e293b; border-radius:12px; overflow:hidden; border:1px solid #334155; }
+  .card img { width:100%; height:150px; object-fit:cover; display:block; background:#0b1220; }
+  .card .row { display:flex; align-items:center; justify-content:space-between; padding:10px 12px; }
+  .card span { font-weight:700; }
+  .card a { color:#38bdf8; text-decoration:none; font-size:14px; font-weight:600; }
+  footer { text-align:center; padding:20px; color:#64748b; font-size:14px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>🖼️ Meri All Images — 1 se 85 (PNG)</h1>
+  <p>Saari images PNG format me • Kisi bhi image par click karke download karo</p>
+</header>
+
+<div class="actions">
+  <a class="btn btn-green" href="all-images-png.zip" download>⬇️ ALL 85 PNG — ZIP Download</a>
+  <a class="btn btn-blue" href="images/" target="_blank">📁 Images Folder Kholo</a>
+</div>
+<p class="count" id="count">Total: 85 images</p>
+
+<div class="grid" id="grid"></div>
+
+<footer>atex • 1.png – 85.png • PNG gallery • ZIP: all-images-png.zip</footer>
+
+<script>
+  const grid = document.getElementById('grid');
+  for (let i = 1; i <= 85; i++) {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <a href="images/${i}.png" target="_blank"><img loading="lazy" src="images/${i}.png" alt="Image ${i}"></a>
+      <div class="row"><span>${i}.png</span><a href="images/${i}.png" download="${i}.png">⬇ Download</a></div>`;
+    grid.appendChild(card);
+  }
+</script>
+</body>
+</html>
