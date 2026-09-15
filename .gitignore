@@ -1,0 +1,6 @@
+# Generated video frames (large binaries, kept out of git).
+# Regenerate from the prompts in beats.json / prompts.md.
+images/
+
+__pycache__/
+*.pyc
