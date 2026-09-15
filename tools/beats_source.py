@@ -38,7 +38,13 @@ TEXT_POLICY = (
     " This ban covers proper nouns and dates in particular: a town name, a founder's name, "
     "a year or an era must never be written on a storefront, plaque, map, newspaper or "
     "caption panel - convey place and period through architecture, vehicles, clothing and "
-    "props instead.. The same ban covers labels the illustration invents for itself: an explanatory caption or two-word economic tag on a panel, chart or callout is the single most common violation in this project, so every panel in a diagram stays empty and the diagram must carry its meaning through shape, size, position and arrows alone."
+    "props instead. The same ban covers labels the illustration invents for itself: an "
+    "explanatory caption or two-word economic tag on a panel, chart or callout is the single "
+    "most common violation in this project, so every panel in a diagram stays empty and the "
+    "diagram must carry its meaning through shape, size, position and arrows alone. "
+    "When a beat compares amounts - square footage, rent per square foot, prices, store "
+    "counts - show that comparison as relative size, height or number of drawn shapes, "
+    "never as digits, currency figures or tick-labelled bars."
 )
 
 # Beats name real competitors (Walmart, Target, CVS, McDonald's, Starbucks, Subway),
