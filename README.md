@@ -43,6 +43,12 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   invents explanatory captions that are in no input at all (`03-47` typeset "HIGH VOLUME/LOW
   MARGIN" on a blank-looking panel). The three are fixed independently in `TEXT_POLICY`; a frame
   that passes after all three clauses is the evidence they work, not a prior.
+- **Known blind spot, adjudicated by eye instead of pretending it is covered:** a SINGLE letter or
+  a monogram on a sign is invisible to the gate, which needs >=3 letters to avoid firing on
+  hatching. 08-01 came back with a block "T" inside a sign panel - legible as an initial, so it
+  violates the lettering rule and the wordmark rule, and was re-queued on sheet review. Widening
+  the rule to 1-2 letters trades a nag on every frame for catching these; not worth it at 205
+  frames, so the contact sheet stays part of the loop rather than a formality.
 - **The gate has two paths, and why.** Words at >=0.6 conf with glyph evidence; PLUS any known
   sign word (CLOSED, OPEN, SALE...) at >=0.3 conf with no glyph test. The second path exists
   because the glyph test - added so blank squiggle panels stop reading as pseudo-words - once
