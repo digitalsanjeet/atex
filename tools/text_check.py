@@ -100,8 +100,26 @@ def glyph_evidence(path, box, min_frac):
     return len(heights), n
 
 
-def scan(path, min_conf, min_len, glyph_frac=0.45):
-    """Return [(text, conf, height_px, box)] for detections that count as lettering."""
+# The generator writes certain words on signs so habitually that they must be caught even
+# when OCR is too unsure to satisfy the confidence bar: 06-37 carried a fully legible
+# "CLOSED" door hanger that the confidence-gated path reported as clean. Matching a known
+# sign vocabulary at low confidence converts a silent miss into a flag, and costs nothing
+# on compliant frames because none of these words may appear anywhere by policy.
+SIGN_LEXICON = {
+    "closed", "open", "sale", "clearance", "exit", "push", "pull", "welcome", "hours",
+    "market", "marketplace", "store", "shop", "grocery", "superstore", "dollarstore",
+    "discount", "bargain", "cheap", "news", "dailynews", "newspaper", "pharmacy", "drug",
+    "cafe", "food", "deptstore", "variety", "everything", "onething", "all",
+}
+
+def scan(path, min_conf, min_len, glyph_frac=0.45, lexicon_conf=0.3):
+    """Return [(text, conf, height_px, box)] for detections that count as lettering.
+
+    Two independent paths. The confidence-gated one catches arbitrary lettering. The
+    lexicon one catches known sign words at low confidence, because OCR frequently detects
+    a small painted word yet reports it too unsure to clear --min-conf, which is how a real
+    "CLOSED" hanger passed the gate while reading as clean.
+    """
     result, _ = ocr()(path)
     hits = []
     for box, text, conf in (result or []):
@@ -112,10 +130,17 @@ def scan(path, min_conf, min_len, glyph_frac=0.45):
         ys = [p[1] for p in box]
         h = int(max(ys) - min(ys))
         s = str(text).strip()
-        if conf < min_conf or not s.isascii():
+        if not s.isascii():
+            continue
+        lex_hit = s.lower().replace(" ", "").replace("'", "") in SIGN_LEXICON
+        if conf < min_conf and not (lex_hit and conf >= lexicon_conf):
             continue
         letters = sum(ch.isalpha() for ch in s)
         digits = sum(ch.isdigit() for ch in s)
+        if lex_hit:
+            # known sign word, already legible to OCR - no glyph test needed
+            hits.append((s.upper(), conf, h, [tuple(map(int, pt)) for pt in box]))
+            continue
         # A violation is a WORD...
         is_word = letters >= max(min_len, 3)
         # ...or a NUMERAL. The policy bans digits as strictly as letters (no prices, no

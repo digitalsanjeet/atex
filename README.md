@@ -43,6 +43,13 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   invents explanatory captions that are in no input at all (`03-47` typeset "HIGH VOLUME/LOW
   MARGIN" on a blank-looking panel). The three are fixed independently in `TEXT_POLICY`; a frame
   that passes after all three clauses is the evidence they work, not a prior.
+- **The gate has two paths, and why.** Words at >=0.6 conf with glyph evidence; PLUS any known
+  sign word (CLOSED, OPEN, SALE...) at >=0.3 conf with no glyph test. The second path exists
+  because the glyph test - added so blank squiggle panels stop reading as pseudo-words - once
+  suppressed a fully legible "CLOSED" door hanger that OCR had resolved at 0.99: the detection
+  box included the mandated blank strokes, so the "discrete marks" fraction failed. A
+  false-positive filter is a false-negative generator; when tightening a gate, re-run it over
+  every frame already rendered and diff the verdicts.
 - **Text is verified by OCR, not by eye:** `tools/text_check.py` runs RapidOCR over every
   frame and flags any detected word. It exists because I had certified frames as
   lettering-free from contact-sheet thumbnails and OCR then found real lettering in 6 of
