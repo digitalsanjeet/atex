@@ -36,6 +36,13 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   on-screen type live in the edit, not in the artwork. This keeps every frame animatable
   and avoids typos baked into 200+ renders. A lone `$` glyph on drawn banknotes is
   tolerated as an icon, not lettering.
+- **Three distinct ways text leaks into a frame, and the clause for each.** The narration's own
+  wording appears as signage when a beat reads like a slogan (`01-06` rendered "BUY CHEAP / SELL
+  CHEAP" as a flow chart). Words from a scene description appear as diagram labels (`05-26`
+  rendered "Rent / Payroll / Logistics" straight out of the `economics` lead). And the model
+  invents explanatory captions that are in no input at all (`03-47` typeset "HIGH VOLUME/LOW
+  MARGIN" on a blank-looking panel). The three are fixed independently in `TEXT_POLICY`; a frame
+  that passes after all three clauses is the evidence they work, not a prior.
 - **Text is verified by OCR, not by eye:** `tools/text_check.py` runs RapidOCR over every
   frame and flags any detected word. It exists because I had certified frames as
   lettering-free from contact-sheet thumbnails and OCR then found real lettering in 6 of
