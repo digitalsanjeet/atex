@@ -121,15 +121,17 @@ def main():
     print(f"\n{ok}/{len(files)} pass; {len(flagged)} flagged "
           f"(small if subjH<{args.min_subj_h} and subjW<{args.min_span_w}; "
           f"overfull if cover>{args.max_cover})")
+    # Write the queue unconditionally: a clean sweep must CLEAR stale entries too,
+    # otherwise a beat that already passed gets re-rendered forever (costs a slot).
+    stamps = [n.replace(".png", "") for n in flagged]
     if flagged:
-        stamps = [n.replace(".png", "") for n in flagged]
         print("flagged: " + " ".join(stamps))
-        if args.write_queue:
-            with open(QUEUE, "w", encoding="utf-8") as fh:
-                fh.write("\n".join(stamps) + "\n")
-            print(f"wrote {QUEUE} ({len(stamps)} beats queued ahead of new renders)")
-        else:
-            print("rerun with --write-queue to queue these for re-render")
+    if args.write_queue:
+        with open(QUEUE, "w", encoding="utf-8") as fh:
+            fh.write("\n".join(stamps) + ("\n" if stamps else ""))
+        print(f"wrote {QUEUE} ({len(stamps)} beats queued ahead of new renders)")
+    elif flagged:
+        print("rerun with --write-queue to queue these for re-render")
     return 0
 
 

@@ -32,6 +32,9 @@ TEXT_POLICY = (
     "abstract horizontal strokes that suggest text from a distance, never real lettering: "
     "an empty sign panel reads correctly on screen, and the model will otherwise fill any "
     "sign-shaped region with words because that is what signs are for."
+    " Never draw the narration's own words: when a beat contains a pithy phrase or slogan, "
+    "it must not appear as a banner, poster, chalkboard or headline, because the line is sound, "
+    "not signage - illustrate the idea with objects instead."
 )
 
 # Beats name real competitors (Walmart, Target, CVS, McDonald's, Starbucks, Subway),
@@ -69,7 +72,10 @@ SCALE = (
     "and sit to the sides. Never shrink the subject into a small vignette floating in a large "
     "empty white field, and never spread the scene out as many tiny distant objects. Equally, "
     "keep the white ground visible as breathing room: do not let the artwork fill the frame "
-    "edge to edge or run colour across the whole background."
+    "edge to edge or run colour across the whole background. "
+    "When the narration implies many locations or countless units, do NOT tile repeated "
+    "copies of the same building or object across the frame to convey quantity: draw one "
+    "dominant subject and imply scale with a single clearly smaller secondary element."
 )
 
 SCENES = {
