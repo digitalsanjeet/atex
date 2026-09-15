@@ -16,14 +16,37 @@ rapidocr-onnxruntime opencv-python-headless).
     python3 tools/text_check.py -v              # list per-frame detections
     python3 tools/text_check.py --write-queue   # append offenders to rerender.txt
     python3 tools/text_check.py --only 03-44    # single frame
+    python3 tools/text_check.py --crops         # dump flagged regions for review
 """
 
 import argparse
 import os
 import sys
 
-IMG_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images")
-QUEUE = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "rerender.txt")
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMG_DIR = os.path.join(ROOT, "images")
+QUEUE = os.path.join(ROOT, "rerender.txt")
+ADJUDICATED = os.path.join(ROOT, "qc_adjudicated.txt")
+
+
+def load_adjudicated():
+    """Return {stamp: {lowercased text}} for hits already reviewed and dismissed.
+
+    OCR reads shelf hatching and squiggle "signage" as pseudo-words. Once a flag has been
+    checked against the crop and found to be artwork rather than type, re-flagging it every
+    scan would either re-queue a good frame forever or train everyone to ignore the gate.
+    The decision is therefore recorded in a file and printed as skipped: auditable, not silent.
+    """
+    out = {}
+    if os.path.exists(ADJUDICATED):
+        with open(ADJUDICATED, encoding="utf-8") as fh:
+            for line in fh:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                stamp, _, text = line.partition("\t")
+                out.setdefault(stamp.strip(), set()).add(text.strip().lower())
+    return out
 
 _OCR = None
 
@@ -170,11 +193,18 @@ def main():
         print("nothing rendered yet")
         return 0
 
+    adj = load_adjudicated()
+    skipped = 0
     flagged = []
     crops = []
     from PIL import Image
     for name in files:
         hits = scan(os.path.join(IMG_DIR, name), args.min_conf, args.min_len)
+        stamp = name.replace(".png", "")
+        if stamp in adj:
+            keep = [h for h in hits if h[0].strip().lower() not in adj[stamp]]
+            skipped += len(hits) - len(keep)
+            hits = keep
         if args.crops:
             im = Image.open(os.path.join(IMG_DIR, name)).convert("RGB")
             for t, c, h, box in hits:
@@ -193,7 +223,8 @@ def main():
             print(f"{name.replace('.png',''):<10} clean")
 
     print(f"\n{len(files) - len(flagged)}/{len(files)} frames free of lettering "
-          f"(conf>={args.min_conf}, >={args.min_len} chars)")
+          f"(conf>={args.min_conf}, >={args.min_len} chars)"
+          + (f"; {skipped} adjudicated hit(s) skipped" if skipped else ""))
     if flagged:
         print("offenders: " + " ".join(n.replace(".png", "") for n, _ in flagged))
         if args.write_queue:

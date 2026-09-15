@@ -1,0 +1,3 @@
+# Adjudicated OCR flags: "<timestamp>\t<detected text>" = reviewed against the crop
+# and confirmed to be artwork (hatching, squiggle signage), not real lettering. Gate skips these.
+00-44	KAW

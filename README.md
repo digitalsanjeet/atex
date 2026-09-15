@@ -85,9 +85,15 @@ python3 tools/next.py               # exact prompts for the next batch of 10
 python3 tools/contact_sheet.py      # labeled review grid of everything rendered so far
 ```
 
-Per-batch loop: render the 10 from `next.py` → `normalize_frames.py` → `sparse_check.py`
-and `text_check.py` (both with `--write-queue`) → commit. `sparse_check --write-queue`
-rewrites the queue and `text_check --write-queue` merges into it, so failures jump ahead
+Per-batch loop: render the 10 from `next.py` → `normalize_frames.py` → **`pack_frames.py`**
+→ `sparse_check.py` and `text_check.py` (both with `--write-queue`) → commit. `sparse_check
+--write-queue` rewrites the queue and `text_check --write-queue` merges into it, so failures
+jump ahead.
+
+Pack runs BEFORE QC on purpose: quantization is lossy, so an unpacked frame is not the
+artifact that ships. Skipping that order once let `00-44` pass the lettering gate, then get
+re-flagged ("KAW", conf 0.63) after packing - an OCR hallucination off shelf hatching, but it
+cost a turn to adjudicate. Verify what you commit, not what the generator handed back.
 of new beats automatically.
 
 QC deps: numpy, scipy, Pillow, rapidocr-onnxruntime + opencv-python-headless

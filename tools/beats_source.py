@@ -35,6 +35,10 @@ TEXT_POLICY = (
     " Never draw the narration's own words: when a beat contains a pithy phrase or slogan, "
     "it must not appear as a banner, poster, chalkboard or headline, because the line is sound, "
     "not signage - illustrate the idea with objects instead."
+    " This ban covers proper nouns and dates in particular: a town name, a founder's name, "
+    "a year or an era must never be written on a storefront, plaque, map, newspaper or "
+    "caption panel - convey place and period through architecture, vehicles, clothing and "
+    "props instead."
 )
 
 # Beats name real competitors (Walmart, Target, CVS, McDonald's, Starbucks, Subway),
