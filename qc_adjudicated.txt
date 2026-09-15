@@ -1,3 +1,8 @@
 # Adjudicated OCR flags: "<timestamp>\t<detected text>" = reviewed against the crop
-# and confirmed to be artwork (hatching, squiggle signage), not real lettering. Gate skips these.
+# and confirmed to be artwork (hatching, squiggle signage, blank label panels), not real
+# lettering. Gate skips these. All three below are empty drawn rectangles that OCR resolves
+# into 0s and 1s - the blank-panel device the prompt policy itself mandates.
 00-44	KAW
+00-06	0010
+00-48	1000
+04-22	000

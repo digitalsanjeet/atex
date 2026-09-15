@@ -114,14 +114,24 @@ def scan(path, min_conf, min_len, glyph_frac=0.45):
         s = str(text).strip()
         if conf < min_conf or not s.isascii():
             continue
-        # OCR hallucinates digits and lone symbols on cross-hatching, shelf rows and
-        # coin stacks, so a violation must be a word: >= --min-len ASCII letters.
         letters = sum(ch.isalpha() for ch in s)
-        if letters < max(min_len, 3):
+        digits = sum(ch.isdigit() for ch in s)
+        # A violation is a WORD...
+        is_word = letters >= max(min_len, 3)
+        # ...or a NUMERAL. The policy bans digits as strictly as letters (no prices, no
+        # counts, no years), but a word-only rule let "35%" or "1955" through untouched,
+        # and OCR reads digit-like marks in cross-hatching and coin stacks far more readily
+        # than whole words, so a numeric hit must clear a higher confidence bar.
+        # Blank label panels and empty window rows are what this project's own policy asks
+        # for, and OCR reads those rectangles as 0s and 1s - so a numeral has to clear a much
+        # higher bar than a word (0.9) before it counts. Real typeset digits score ~0.99; the
+        # three false positives this rule replaced scored 0.78-0.91.
+        is_number = digits >= 2 and conf >= max(min_conf, 0.9)
+        if not (is_word or is_number):
             continue
         glyphs, _total = glyph_evidence(path, box, glyph_frac)
         # require that most characters resolved as separate marks, i.e. it is type
-        if glyphs < max(2, int(glyph_frac * letters)):
+        if glyphs < max(2, int(glyph_frac * (letters if is_word else digits))):
             continue
         hits.append((s, conf, h, [tuple(map(int, pt)) for pt in box]))
     return hits
@@ -152,6 +162,13 @@ def selftest(tmp="/tmp/txtcheck"):
         d2.line(pts, fill=(90, 90, 90), width=7)
     im2.save(f"{tmp}/squiggle.png")
 
+    # C: a bare numeral - the case the old word-only rule silently passed
+    im3 = Image.new("RGB", (1920, 1080), (255, 255, 255))
+    d3 = ImageDraw.Draw(im3)
+    panel(d3, (620, 380, 1300, 560))
+    d3.text((700, 420), "1955", fill=(15, 15, 15), font=f)
+    im3.save(f"{tmp}/digits.png")
+
     def run(p):
         out = subprocess.run([sys.executable, os.path.abspath(__file__), "--only",
                               os.path.basename(p).replace(".png", "")],
@@ -161,11 +178,14 @@ def selftest(tmp="/tmp/txtcheck"):
     # run against the temp images directly
     a = scan(f"{tmp}/letters.png", 0.6, 2)
     b = scan(f"{tmp}/squiggle.png", 0.6, 2)
+    c = scan(f"{tmp}/digits.png", 0.6, 2)
     print("letters.png  ->", a if a else "no lettering detected",
           "  EXPECTED: detected")
     print("squiggle.png ->", b if b else "no lettering detected",
           "  EXPECTED: none")
-    ok = bool(a) and not bool(b)
+    print("digits.png   ->", c if c else "no lettering detected",
+          "  EXPECTED: detected (numerals count too)")
+    ok = bool(a) and not bool(b) and bool(c)
     print("SELF-TEST", "PASS" if ok else "FAIL")
     return 0 if ok else 1
 
