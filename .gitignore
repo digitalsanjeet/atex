@@ -1,9 +1,9 @@
-# Generated video frames (large binaries, kept out of git).
-# Regenerate from the prompts in beats.json / prompts.md.
-images/
+# Review/preview artifacts (regenerable, kept out of git)
+out/
+
+# NOTE: images/ is now TRACKED. Generated frames do not survive between turns as
+# untracked files -- 51 finished frames were silently dropped from the sandbox once.
+# They only persist by being committed. See tools/pack_frames.py for the size fix.
 
 __pycache__/
 *.pyc
-
-# Review/preview artifacts
-out/
