@@ -42,6 +42,10 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   subject*, plus a mandatory rule that the main subject claim 55–75% of frame height.
   `tools/sparse_check.py` verifies it numerically instead of by eye, and exempts scenes
   that legitimately span wide rather than tall (maps, street-level landscapes).
+- **Two-sided guard:** telling the model to draw the subject large can overcorrect into
+  full-bleed artwork with no white ground (`01-30`, `00-29`). Prompts now also forbid
+  filling the frame edge to edge, and QC flags ink coverage above 80% as OVERFULL.
+  Both failure modes are therefore measured, not just the one I noticed first.
 
 ## Regenerating
 

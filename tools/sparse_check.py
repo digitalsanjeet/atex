@@ -73,6 +73,8 @@ def metrics(path, white_thresh=242, dilate=4):
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--min-subj-h", type=float, default=0.55)
+    ap.add_argument("--max-cover", type=float, default=0.80,
+                    help="flag full-bleed frames: the style calls for a white ground")
     ap.add_argument("--min-span-w", type=float, default=0.75,
                     help="a subject spanning this much width passes even if short")
     ap.add_argument("--dilate", type=int, default=4)
@@ -90,20 +92,28 @@ def main():
         cov, subj_h, subj_w = metrics(os.path.join(IMG_DIR, name), dilate=args.dilate)
         # A subject that spans nearly the full width is fine even when short: maps,
         # street-level landscapes and horizon scenes legitimately read that way.
-        bad = subj_h < args.min_subj_h and subj_w < args.min_span_w
-        rows.append((name, cov, subj_h, subj_w, bad))
-        if bad:
+        small = subj_h < args.min_subj_h and subj_w < args.min_span_w
+        overfull = cov > args.max_cover
+        rows.append((name, cov, subj_h, subj_w, small, overfull))
+        if small or overfull:
             flagged.append(name)
 
     print(f"{'frame':<10} {'cover':>6} {'subjH':>6} {'subjW':>6}  verdict")
-    for name, cov, subj_h, subj_w, bad in rows:
-        if bad or args.verbose:
-            print(f"{name.replace('.png',''):<10} {cov:>6.3f} {subj_h:>6.3f} {subj_w:>6.3f}  "
-                  f"{'SMALL SUBJECT' if bad else 'ok'}")
+    for name, cov, subj_h, subj_w, small, overfull in rows:
+        if small or overfull or args.verbose:
+            verdict = "ok"
+            if small:
+                verdict = "SMALL SUBJECT"
+            if overfull:
+                verdict = "OVERFULL (no white ground)"
+            if small and overfull:
+                verdict = "SMALL + OVERFULL"
+            print(f"{name.replace('.png',''):<10} {cov:>6.3f} {subj_h:>6.3f} {subj_w:>6.3f}  {verdict}")
 
     ok = len(files) - len(flagged)
-    print(f"\n{ok}/{len(files)} pass; {len(flagged)} with a subject too small for 1080p "
-          f"(pass if subjH>={args.min_subj_h} or subjW>={args.min_span_w})")
+    print(f"\n{ok}/{len(files)} pass; {len(flagged)} flagged "
+          f"(small if subjH<{args.min_subj_h} and subjW<{args.min_span_w}; "
+          f"overfull if cover>{args.max_cover})")
     if flagged:
         stamps = [n.replace(".png", "") for n in flagged]
         print("flagged: " + " ".join(stamps))

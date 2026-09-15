@@ -52,7 +52,9 @@ SCALE = (
     "of the frame height on its own, drawn at close working distance so it stays crisp and "
     "readable at 1080p and survives a slow push-in. Any secondary elements are clearly smaller "
     "and sit to the sides. Never shrink the subject into a small vignette floating in a large "
-    "empty white field, and never spread the scene out as many tiny distant objects."
+    "empty white field, and never spread the scene out as many tiny distant objects. Equally, "
+    "keep the white ground visible as breathing room: do not let the artwork fill the frame "
+    "edge to edge or run colour across the whole background."
 )
 
 SCENES = {
