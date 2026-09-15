@@ -46,6 +46,11 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   full-bleed artwork with no white ground (`01-30`, `00-29`). Prompts now also forbid
   filling the frame edge to edge, and QC flags ink coverage above 80% as OVERFULL.
   Both failure modes are therefore measured, not just the one I noticed first.
+- **Threshold honesty:** the small-subject floor is 0.45 frame height, not the 0.55 first
+  drafted — frames at 0.47–0.54 were verified good by eye, and a stricter bar burns render
+  budget re-rolling fine frames while teaching everyone to ignore the warning. The contact
+  sheet remains the final arbiter; `subjH` cannot tell a sparse frame from a deliberate
+  wide diagram.
 
 ## Regenerating
 
