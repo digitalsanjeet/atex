@@ -21,9 +21,20 @@ STYLE_SUFFIX = (
     "no realism, no 3D, no photorealism, no cinematic lighting, no painterly style."
 )
 
+# Locked art direction: frames carry no lettering of any kind. The narration and any
+# on-screen captions are added in the edit, so artwork must stay purely visual.
+TEXT_POLICY = (
+    "Absolutely no text anywhere in the image: no words, letters, numbers, typography, "
+    "captions, titles, headings, labels, price tags with digits, signage, storefront lettering, "
+    "banners, arrows with text, speech bubbles or quote bubbles. Communicate the beat only "
+    "through drawn objects, figures, gestures and simple diagrammatic shapes."
+)
+
 NEGATIVE_PROMPT = (
     "photorealistic, 3D render, cinematic lighting, glossy commercial photography, clutter, "
-    "excessive detail, realistic faces, text-heavy infographic, watermark, logo"
+    "excessive detail, realistic faces, text-heavy infographic, watermark, logo, "
+    "text, letters, words, numbers, typography, captions, subtitles, signage, lettering, "
+    "price tags with digits, speech bubbles"
 )
 
 CAMERA = (
@@ -33,6 +44,14 @@ CAMERA = (
 
 # Appended last so every render is composed for a 16:9 video frame.
 FRAMING = "Wide 16:9 landscape frame, horizontal composition."
+
+# Guards against the sparse-subject failure mode: "lots of negative space" can be read
+# as "make everything tiny", which fails at 1080p under a slow push-in.
+SCALE = (
+    "Render the main subject large: the primary element fills roughly the middle half of "
+    "the frame height and stays crisp and readable at 1080p, with negative space around it "
+    "rather than miniature detail spread across a wide empty field."
+)
 
 SCENES = {
     "storefront": "Create clear American dollar-store scene illustrating the narration beat.",
@@ -267,7 +286,8 @@ def build_beats():
         scene = SCENES[scene_key]
         prompt = (
             f"{scene} Visually communicate this narration beat: \u201c{beat}\u201d "
-            f"{STYLE_SUFFIX} Negative prompt: {NEGATIVE_PROMPT}. {CAMERA} {FRAMING}"
+            f"{TEXT_POLICY} {STYLE_SUFFIX} Negative prompt: {NEGATIVE_PROMPT}. "
+            f"{CAMERA} {SCALE} {FRAMING}"
         )
         records.append(
             {

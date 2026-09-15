@@ -27,16 +27,26 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
 - **Camera:** medium-wide editorial framing, eye level, slight three-quarter perspective.
 - **Framing:** every prompt ends with a 16:9 landscape directive; frames are then
   normalized to exactly 1920×1080.
+- **No lettering (locked):** frames contain no text of any kind — no words, numbers,
+  price tags with digits, captions, signage or speech bubbles. Narration and any
+  on-screen type live in the edit, not in the artwork. This keeps every frame animatable
+  and avoids typos baked into 200+ renders. Verified on `00-00`→`00-44`: all 10 came
+  back clean. A lone `$` glyph on drawn banknotes is tolerated as an icon, not lettering.
+- **Subject scale (locked):** "lots of negative space" tends to make the model shrink
+  everything until it fails at 1080p, so prompts also require the primary element to fill
+  roughly the middle half of the frame height.
 
 ## Regenerating
 
 ```bash
 python3 tools/build_manifest.py     # rebuild beats.json + prompts.md
 python3 tools/normalize_frames.py   # force every frame to 1920x1080
-python3 tools/status.py             # what's rendered, what's missing
+python3 tools/status.py             # what's rendered, what's missing (authoritative)
+python3 tools/next.py               # exact prompts for the next unrendered batch of 10
+python3 tools/contact_sheet.py      # labeled review grid of everything rendered so far
 ```
 
-## Status
+## Progress
 
-10 of 205 frames rendered (`00-00` → `00-44`). The image generator allows 10 renders
-per turn, so the remaining 195 continue in batches of 10 across subsequent turns.
+`python3 tools/status.py` is always authoritative. The generator allows 10 image renders
+per user turn, so frames accumulate in batches of 10 across turns.

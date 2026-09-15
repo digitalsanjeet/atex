@@ -20,9 +20,11 @@ def main():
         "beat_count": len(beats),
         "naming": "<mm-ss>.png",
         "style_suffix": src.STYLE_SUFFIX,
+        "text_policy": src.TEXT_POLICY,
         "negative_prompt": src.NEGATIVE_PROMPT,
         "camera": src.CAMERA,
         "framing": src.FRAMING,
+        "scale": src.SCALE,
         "scenes": src.SCENES,
         "beats": beats,
     }
