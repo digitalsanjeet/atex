@@ -21,6 +21,7 @@ def main():
         "naming": "<mm-ss>.png",
         "style_suffix": src.STYLE_SUFFIX,
         "text_policy": src.TEXT_POLICY,
+        "brand_policy": src.BRAND_POLICY,
         "negative_prompt": src.NEGATIVE_PROMPT,
         "camera": src.CAMERA,
         "framing": src.FRAMING,

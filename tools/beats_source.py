@@ -30,11 +30,22 @@ TEXT_POLICY = (
     "through drawn objects, figures, gestures and simple diagrammatic shapes."
 )
 
+# Beats name real competitors (Walmart, Target, CVS, McDonald's, Starbucks, Subway),
+# so mark-free rendering is a legal requirement for a published video, not just a style
+# preference. The prompt ban stills/wordmarks and asks for anonymous generic storefronts;
+# the narration carries the names.
+BRAND_POLICY = (
+    "No brand logos, wordmarks, mascots or trademarked trade dress of any kind. When the "
+    "beat mentions a named chain, represent it as a generic anonymous retail building or a "
+    "neutral icon of what it sells, never its actual marks."
+)
+
 NEGATIVE_PROMPT = (
     "photorealistic, 3D render, cinematic lighting, glossy commercial photography, clutter, "
     "excessive detail, realistic faces, text-heavy infographic, watermark, logo, "
     "text, letters, words, numbers, typography, captions, subtitles, signage, lettering, "
-    "price tags with digits, speech bubbles"
+    "price tags with digits, speech bubbles, brand logo, wordmark, trademark, "
+    "mascot, trade dress"
 )
 
 CAMERA = (
@@ -290,7 +301,8 @@ def build_beats():
         scene = SCENES[scene_key]
         prompt = (
             f"{scene} Visually communicate this narration beat: \u201c{beat}\u201d "
-            f"{TEXT_POLICY} {STYLE_SUFFIX} Negative prompt: {NEGATIVE_PROMPT}. "
+            f"{TEXT_POLICY} {BRAND_POLICY} {STYLE_SUFFIX} "
+            f"Negative prompt: {NEGATIVE_PROMPT}. "
             f"{CAMERA} {SCALE} {FRAMING}"
         )
         records.append(

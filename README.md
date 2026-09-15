@@ -42,6 +42,14 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   subject*, plus a mandatory rule that the main subject claim 55–75% of frame height.
   `tools/sparse_check.py` verifies it numerically instead of by eye, and exempts scenes
   that legitimately span wide rather than tall (maps, street-level landscapes).
+- **No trademarked marks (locked):** beats name real chains (Walmart, Target, CVS,
+  McDonald's, Starbucks, Subway), so prompts ban logos, wordmarks, mascots and trade
+  dress and ask for generic anonymous buildings instead — the narration carries the
+  names. For a published video this is a legal requirement, not a style preference.
+  `03-14` is the argument for it: "more locations than McDonald's and Starbucks" reads as
+  a scale balancing a burger against a coffee cup on a US outline, which is clearer than
+  any logo would be. Added after `03-19` was rendered, so the 48 frames from earlier turns
+  relied on the `logo` term in the negative prompt alone — reviewed by eye, none carry marks.
 - **Two-sided guard:** telling the model to draw the subject large can overcorrect into
   full-bleed artwork with no white ground (`01-30`, `00-29`). Prompts now also forbid
   filling the frame edge to edge, and QC flags ink coverage above 80% as OVERFULL.
