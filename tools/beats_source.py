@@ -12,11 +12,11 @@ Run `python3 tools/build_manifest.py` to regenerate:
 TITLE = "THE ECONOMICS OF OWNING A DOLLAR STORE"
 
 STYLE_SUFFIX = (
-    "Use 1\u20133 main elements, clear visual hierarchy, and strong negative space. "
+    "Use 1\u20133 main elements with a clear visual hierarchy. "
     "Clean 2D hand-drawn editorial illustration, minimalist educational explainer artwork, "
     "white/simple background, thick black ink outlines, slightly imperfect hand-sketched linework, "
     "subtle marker texture, flat muted pastel colors, simple geometric forms, rounded cartoon characters, "
-    "vector-inspired composition, educational infographic aesthetic, uncluttered, lots of negative space, "
+    "vector-inspired composition, educational infographic aesthetic, uncluttered, clean white space around the subject, "
     "high readability, consistent line thickness, simple shadows only, "
     "no realism, no 3D, no photorealism, no cinematic lighting, no painterly style."
 )
@@ -48,9 +48,11 @@ FRAMING = "Wide 16:9 landscape frame, horizontal composition."
 # Guards against the sparse-subject failure mode: "lots of negative space" can be read
 # as "make everything tiny", which fails at 1080p under a slow push-in.
 SCALE = (
-    "Render the main subject large: the primary element fills roughly the middle half of "
-    "the frame height and stays crisp and readable at 1080p, with negative space around it "
-    "rather than miniature detail spread across a wide empty field."
+    "Composition rule, mandatory: the single main subject must be LARGE, occupying 55\u201375% "
+    "of the frame height on its own, drawn at close working distance so it stays crisp and "
+    "readable at 1080p and survives a slow push-in. Any secondary elements are clearly smaller "
+    "and sit to the sides. Never shrink the subject into a small vignette floating in a large "
+    "empty white field, and never spread the scene out as many tiny distant objects."
 )
 
 SCENES = {

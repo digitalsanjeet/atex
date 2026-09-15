@@ -14,6 +14,10 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
 | `tools/build_manifest.py` | Regenerates `beats.json` and `prompts.md`. |
 | `tools/normalize_frames.py` | Crops/rescales every frame in `images/` to an exact 1920×1080 16:9 frame (idempotent). |
 | `tools/status.py` | Reports which beats have frames and which are still missing. |
+| `tools/sparse_check.py` | Composition QC: measures each frame's dominant subject size and flags ones too small for 1080p. |
+| `tools/next.py` | Prints the exact prompts for the next batch, re-render queue first. |
+| `rerender.txt` | Beats queued to be drawn again (one timestamp per line); `next.py` puts these ahead of new beats. |
+| `out/contact_sheet.png` | Labeled review grid of everything rendered so far (not committed). |
 
 ## Conventions
 
@@ -32,19 +36,26 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
   on-screen type live in the edit, not in the artwork. This keeps every frame animatable
   and avoids typos baked into 200+ renders. Verified on `00-00`→`00-44`: all 10 came
   back clean. A lone `$` glyph on drawn banknotes is tolerated as an icon, not lettering.
-- **Subject scale (locked):** "lots of negative space" tends to make the model shrink
-  everything until it fails at 1080p, so prompts also require the primary element to fill
-  roughly the middle half of the frame height.
+- **Subject scale (locked, measurable):** "lots of negative space" and "uncluttered" made
+  the model shrink subjects into tiny vignettes that fail at 1080p, so the style text no
+  longer asks for negative space in the abstract — it asks for clean space *around the
+  subject*, plus a mandatory rule that the main subject claim 55–75% of frame height.
+  `tools/sparse_check.py` verifies it numerically instead of by eye, and exempts scenes
+  that legitimately span wide rather than tall (maps, street-level landscapes).
 
 ## Regenerating
 
 ```bash
 python3 tools/build_manifest.py     # rebuild beats.json + prompts.md
 python3 tools/normalize_frames.py   # force every frame to 1920x1080
+python3 tools/sparse_check.py -v    # composition QC; --write-queue to queue offenders
 python3 tools/status.py             # what's rendered, what's missing (authoritative)
-python3 tools/next.py               # exact prompts for the next unrendered batch of 10
+python3 tools/next.py               # exact prompts for the next batch of 10
 python3 tools/contact_sheet.py      # labeled review grid of everything rendered so far
 ```
+
+Per-batch loop: render the 10 from `next.py` → `normalize_frames.py` →
+`sparse_check.py --write-queue` → delete re-rendered stamps from `rerender.txt` → commit.
 
 ## Progress
 

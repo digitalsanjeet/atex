@@ -18,10 +18,24 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 IMG_DIR = os.path.join(ROOT, "images")
+QUEUE = os.path.join(ROOT, "rerender.txt")
 
 
 def missing(beats):
     return [b for b in beats if not os.path.exists(os.path.join(IMG_DIR, b["file"]))]
+
+
+def queued(by_stamp):
+    """Timestamps listed in rerender.txt, in order \u2014 these go ahead of new beats."""
+    if not os.path.exists(QUEUE):
+        return []
+    out = []
+    with open(QUEUE, encoding="utf-8") as fh:
+        for line in fh:
+            stamp = line.strip()
+            if stamp in by_stamp:
+                out.append(by_stamp[stamp])
+    return out
 
 
 def main():
@@ -32,26 +46,45 @@ def main():
     args = ap.parse_args()
 
     with open(os.path.join(ROOT, "beats.json"), encoding="utf-8") as fh:
-        beats = json.load(fh)["beats"]
+        data = json.load(fh)
+    beats = data["beats"]
+    by_stamp = {b["timestamp"]: b for b in beats}
 
     todo = missing(beats)
+    requeue = [b for b in queued(by_stamp) if b in todo or os.path.exists(os.path.join(IMG_DIR, b["file"]))]
+    batch_ids = [b["timestamp"] for b in requeue]
+
     if args.ids or args.all:
-        print(" ".join(b["timestamp"] for b in (todo if args.all else todo[: args.count])))
+        pick = todo if args.all else (requeue + [b for b in todo if b["timestamp"] not in batch_ids])[: args.count]
+        print(" ".join(b["timestamp"] for b in pick))
         return 0
 
-    if not todo:
-        print("all 205 frames rendered")
+    if not todo and not requeue:
+        print("all 205 frames rendered \u2014 nothing queued")
         return 0
 
-    batch = todo[: args.count]
-    print(f"# {len(batch)} beats  |  {len(todo)} still missing of {len(beats)} total")
+    fresh = [b for b in todo if b["timestamp"] not in batch_ids]
+    batch = (requeue + fresh)[: args.count]
+    if not batch:
+        print("nothing to do")
+        return 0
+
+    print(f"# {len(batch)} beats  |  {len(todo)} never rendered, "
+          f"{len(requeue)} queued for re-render  (generator cap: 10 per turn)")
+    if requeue:
+        print("# re-render first: " + " ".join(b["timestamp"] for b in requeue))
     print(f"# target files: {' '.join(b['file'] for b in batch)}")
     for beat in batch:
-        print(f"\n## {beat['file']}\nPROMPT:\n{beat['image_prompt']}")
+        print(f"\n## {beat['file']}")
+        print("PROMPT:")
+        print(beat["image_prompt"])
     print(
-        f"\n# then run: python3 tools/normalize_frames.py && python3 tools/status.py",
+        "\n# after rendering:  python3 tools/normalize_frames.py"
+        " && python3 tools/sparse_check.py --write-queue",
         file=sys.stderr,
     )
+    print("# clear finished entries from rerender.txt so they stop jumping the queue",
+          file=sys.stderr)
     return 0
 
 
