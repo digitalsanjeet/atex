@@ -27,7 +27,11 @@ TEXT_POLICY = (
     "Absolutely no text anywhere in the image: no words, letters, numbers, typography, "
     "captions, titles, headings, labels, price tags with digits, signage, storefront lettering, "
     "banners, arrows with text, speech bubbles or quote bubbles. Communicate the beat only "
-    "through drawn objects, figures, gestures and simple diagrammatic shapes."
+    "through drawn objects, figures, gestures and simple diagrammatic shapes. Signs, "
+    "awnings, product packaging, newspaper fronts and ledger pages must be blank panels or "
+    "abstract horizontal strokes that suggest text from a distance, never real lettering: "
+    "an empty sign panel reads correctly on screen, and the model will otherwise fill any "
+    "sign-shaped region with words because that is what signs are for."
 )
 
 # Beats name real competitors (Walmart, Target, CVS, McDonald's, Starbucks, Subway),

@@ -34,8 +34,21 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
 - **No lettering (locked):** frames contain no text of any kind — no words, numbers,
   price tags with digits, captions, signage or speech bubbles. Narration and any
   on-screen type live in the edit, not in the artwork. This keeps every frame animatable
-  and avoids typos baked into 200+ renders. Verified on `00-00`→`00-44`: all 10 came
-  back clean. A lone `$` glyph on drawn banknotes is tolerated as an icon, not lettering.
+  and avoids typos baked into 200+ renders. A lone `$` glyph on drawn banknotes is
+  tolerated as an icon, not lettering.
+- **Text is verified by OCR, not by eye:** `tools/text_check.py` runs RapidOCR over every
+  frame and flags any detected word. It exists because I had certified frames as
+  lettering-free from contact-sheet thumbnails and OCR then found real lettering in 6 of
+  57 ("SOUP" on a can, "TIN" on a box, "DISCOUNT STORE" and "BIG RETAILER" signs,
+  "PAYROLL" in a ledger, "store" on a plaque). Two geometric detectors were tried first
+  and both failed: connected components miss text inside a sign panel (letters merge with
+  the outline), and row ink-run density fires on the drawings themselves. After filtering
+  to alphabetic words, precision on that set was 6/6 true. Treat thumbnail review as
+  insufficient; run the check.
+- **Blank-panel instruction:** the root cause of leaked text is that the model fills any
+  sign-shaped region with words, because that is what signs are for. Prompts now require
+  signs, packaging, newspaper fronts and ledger pages to be blank panels or abstract
+  horizontal strokes.
 - **Subject scale (locked, measurable):** "lots of negative space" and "uncluttered" made
   the model shrink subjects into tiny vignettes that fail at 1080p, so the style text no
   longer asks for negative space in the abstract — it asks for clean space *around the
@@ -66,13 +79,19 @@ Timestamped 16:9 illustration frames for the ~16:10 narration track
 python3 tools/build_manifest.py     # rebuild beats.json + prompts.md
 python3 tools/normalize_frames.py   # force every frame to 1920x1080
 python3 tools/sparse_check.py -v    # composition QC; --write-queue to queue offenders
+python3 tools/text_check.py -v      # OCR QC for lettering; --write-queue, --crops
 python3 tools/status.py             # what's rendered, what's missing (authoritative)
 python3 tools/next.py               # exact prompts for the next batch of 10
 python3 tools/contact_sheet.py      # labeled review grid of everything rendered so far
 ```
 
-Per-batch loop: render the 10 from `next.py` → `normalize_frames.py` →
-`sparse_check.py --write-queue` → delete re-rendered stamps from `rerender.txt` → commit.
+Per-batch loop: render the 10 from `next.py` → `normalize_frames.py` → `sparse_check.py`
+and `text_check.py` (both with `--write-queue`) → commit. `sparse_check --write-queue`
+rewrites the queue and `text_check --write-queue` merges into it, so failures jump ahead
+of new beats automatically.
+
+QC deps: numpy, scipy, Pillow, rapidocr-onnxruntime + opencv-python-headless
+(the headless build is required — the default opencv wheel needs libGL, absent here).
 
 ## Progress
 
