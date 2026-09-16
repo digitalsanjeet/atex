@@ -143,3 +143,35 @@ What is NOT an artifact: the same frames cluttered with edge icons (registers, e
 clipboards) genuinely read small. The fix that works is naming the object group and asking
 for thick filled ribbons instead of hairline arrows, which raises `cover` as well as the
 eye's confidence.
+
+
+## State of the run (final)
+
+* **205 / 205 beats rendered**, `00-00.png` -> `16-10.png`, matching the 16:10 narration
+  file. Every frame is 1920x1080, 8-bit indexed (256-colour median cut, ~0.59 MB average,
+  121 MB total for the set).
+* **Lettering gate: 205/205 clean.** 3 OCR hits reviewed and dismissed as shape-not-type,
+  recorded in `qc_adjudicated.txt` (two blank label rectangles and one distant church
+  window trio that read as `000`).
+* **Composition gate: 201/205 pass as measured, 4 accepted by eye** and left unrendered:
+  `12-18` and `12-46` (single large diagonals - a rising arrow, a broad staircase - which
+  the contiguous-run metric scores short), `13-39` and `15-45` (deliberate full-bleed
+  night frames, where a filled sky is the point). Deleting a line from `rerender.txt`
+  after a gate run is how an accepted frame is kept; `--write-queue` rewrites the file.
+* No duplicate frames (`md5` over all 205 files), filenames exactly equal to the manifest,
+  no two beats closer than 3 s apart.
+* Full-run overview: `out/contact_final.png` (6 x 35 grid) and `out/contact_sheet.png`
+  (205 frames at sheet resolution) - `out/` is gitignored, so regenerate with
+  `python3 tools/contact_sheet.py`.
+
+## Assembling with the narration
+
+Frames are named by the timestamp they belong at, so the edit is a slide-sync problem
+rather than a manual one:
+
+    ffmpeg -framerate 1 -start_number 0 -i images/%02d... \  # see prompts.md for the beat order
+           -i "Imagine opening your (1).mp3" -r 30 out/video.mp4
+
+The beats are unevenly spaced, so the practical route is to build an edit list from
+`beats.json` (each `timestamp` field is `mm-ss` and is also the filename) and let the
+editor hold each frame until the next timestamp.
