@@ -123,3 +123,17 @@ QC deps: numpy, scipy, Pillow, rapidocr-onnxruntime + opencv-python-headless
 
 `python3 tools/status.py` is always authoritative. The generator allows 10 image renders
 per user turn, so frames accumulate in batches of 10 across turns.
+
+## `sparse_check.py` blind spot: thin diagonal subjects
+
+The composition gate measures the longest contiguous ink run per axis, so a frame built
+from a single big diagonal - an arrow, a staircase, two crossing ribbons - can score
+`subjH` 0.35 while visually dominating the frame. Those flags are adjudicated by eye on
+the contact sheet rather than re-rendered, and the run keeps a written record in
+`rerender.txt` (delete an accepted line to stop it being re-queued; `--write-queue`
+rewrites the file, so accepted frames are pruned after each gate run).
+
+What is NOT an artifact: the same frames cluttered with edge icons (registers, envelopes,
+clipboards) genuinely read small. The fix that works is naming the object group and asking
+for thick filled ribbons instead of hairline arrows, which raises `cover` as well as the
+eye's confidence.
