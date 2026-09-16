@@ -133,6 +133,12 @@ the contact sheet rather than re-rendered, and the run keeps a written record in
 `rerender.txt` (delete an accepted line to stop it being re-queued; `--write-queue`
 rewrites the file, so accepted frames are pruned after each gate run).
 
+Another false-positive family the numeral path produces: a row of identical round or oval
+shapes - three arched church windows in the distance read as `000` at conf 0.99 (`14-06`).
+Adjudicate those into `qc_adjudicated.txt` with the string they produced rather than
+re-rendering, because the shapes are the subject, not lettering, and asking the model to
+break up every repeated round form costs the composition that made the beat readable.
+
 What is NOT an artifact: the same frames cluttered with edge icons (registers, envelopes,
 clipboards) genuinely read small. The fix that works is naming the object group and asking
 for thick filled ribbons instead of hairline arrows, which raises `cover` as well as the
