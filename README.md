@@ -166,12 +166,16 @@ eye's confidence.
 
 ## Assembling with the narration
 
-Frames are named by the timestamp they belong at, so the edit is a slide-sync problem
-rather than a manual one:
+Frames are named by the mm-ss they belong at, and the beats are unevenly spaced, so the
+edit is a duration problem rather than a manual one. `tools/build_edit_list.py` turns
+`beats.json` into an ffmpeg concat list (plus `out/edit_list.csv`, the hold time per
+frame), extending the final frame to the end of the audio where ffprobe can read it, or
+by `--tail` seconds:
 
-    ffmpeg -framerate 1 -start_number 0 -i images/%02d... \  # see prompts.md for the beat order
-           -i "Imagine opening your (1).mp3" -r 30 out/video.mp4
+    python3 tools/build_edit_list.py
+    ffmpeg -f concat -safe 0 -i out/frames.txt -i "Imagine opening your (1).mp3" \
+           -vsync vfr -c:v libx264 -crf 18 -pix_fmt yuv420p -shortest out/video.mp4
 
-The beats are unevenly spaced, so the practical route is to build an edit list from
-`beats.json` (each `timestamp` field is `mm-ss` and is also the filename) and let the
-editor hold each frame until the next timestamp.
+Run without ffmpeg the tool still emits the list - 205 frames, 980.0 s with the default
+10 s tail on the last beat, against a 16:10 narration - and `-shortest` trims the
+difference at the mux. Narration and captions live in the audio track, never in the art.
