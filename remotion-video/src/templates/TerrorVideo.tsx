@@ -190,14 +190,33 @@ const TerrorSceneView: React.FC<{
 };
 
 export const TerrorVideo: React.FC<TerrorVideoProps> = ({
-  channelName,
-  footerText,
-  scenes,
+  channelName = "",
+  footerText = "",
+  scenes = [],
 }) => {
   const { durationInFrames } = useVideoConfig();
 
+  if (scenes.length === 0) {
+    return (
+      <AbsoluteFill
+        style={{
+          background: "#000",
+          justifyContent: "center",
+          alignItems: "center",
+          color: "#EDEDED",
+          fontSize: 42,
+          textAlign: "center",
+          padding: 80,
+          fontFamily: "Georgia, 'Times New Roman', serif",
+        }}
+      >
+        Sin escenas — añade texto en el panel Props → scenes
+      </AbsoluteFill>
+    );
+  }
+
   const total = scenes.length;
-  const sceneFrames = Math.floor(durationInFrames / total);
+  const sceneFrames = Math.max(1, Math.floor(durationInFrames / total));
 
   return (
     <AbsoluteFill

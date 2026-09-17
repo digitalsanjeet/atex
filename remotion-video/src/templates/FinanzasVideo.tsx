@@ -205,14 +205,34 @@ const FinanzasSceneView: React.FC<{
 };
 
 export const FinanzasVideo: React.FC<FinanzasVideoProps> = ({
-  channelName,
-  scenes,
+  channelName = "",
+  scenes = [],
 }) => {
   const frame = useCurrentFrame();
   const { durationInFrames } = useVideoConfig();
 
+  if (scenes.length === 0) {
+    return (
+      <AbsoluteFill
+        style={{
+          background: BG_BOTTOM,
+          justifyContent: "center",
+          alignItems: "center",
+          color: "#fff",
+          fontSize: 42,
+          textAlign: "center",
+          padding: 80,
+          fontFamily:
+            "system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif",
+        }}
+      >
+        Sin escenas — añade texto en el panel Props → scenes
+      </AbsoluteFill>
+    );
+  }
+
   const total = scenes.length;
-  const sceneFrames = Math.floor(durationInFrames / total);
+  const sceneFrames = Math.max(1, Math.floor(durationInFrames / total));
 
   const progress = interpolate(frame, [0, durationInFrames - 1], [0, 100], {
     extrapolateLeft: "clamp",
