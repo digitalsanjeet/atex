@@ -9,6 +9,7 @@ React (Remotion) + Python se Spanish YouTube videos banao.
 | `remotion-video/` | Remotion project — edit + preview in Studio (`npm run dev`) |
 | `remotion-video/src/templates/` | 💰 Finanzas + 😱 Terror video templates |
 | `tools/render_mp4.py` | Bina browser ke seedha **MP4 render** karne wali script |
+| `videos/` | Ready MP4 files (direct download ke liye) |
 | `out/` | Bani hui MP4 files (git me nahi jati) |
 
 ## MP4 banana (easiest — yahi use karo)
